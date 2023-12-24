@@ -1,4 +1,4 @@
-from src.config import CONFIG
+from config import CONFIG
 
 SUCCESS = {'message': 'success! successfully translated', 'code': '0'}
 NOT_YASH_EXCEPTION = {'message': f'failed! file should have `.{CONFIG["EXTENSION"]}` extension', 'code': '1'}

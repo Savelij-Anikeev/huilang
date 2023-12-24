@@ -15,7 +15,7 @@ COMMANDS = {
     'азбука': 'dict',
 
     # functions
-    'епта': 'def',
+    'дефине': 'def',
     'оформить': 'return',
 
     # conditions
@@ -66,7 +66,8 @@ COMMANDS = {
 
     # classes
     'клёво': 'class',
-    'найтистукача': 'assert',
+    'базаришь?': 'assert',
+    'пиздишь?': 'assert',
 
     # punctuation
     ' бля': ':',
