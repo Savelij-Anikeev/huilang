@@ -95,7 +95,8 @@ def handle_code(old_code: list) -> (bool, str):
     True - success, False - error
     """
     new_code = ''
-    var_pattern = r'[$>][\b|\D]\w+\S'
+    # var_pattern = r'[$>][\b|\D]\w+\S'
+    var_pattern = r'[$]\S+'
     func_pattern = r'[\s]\w+[<(]'
 
     # replacing
@@ -116,8 +117,13 @@ def handle_code(old_code: list) -> (bool, str):
                for var in re.findall(pattern=var_pattern, string=new_code)]
 
     # detecting functions
-    matches += [{f'{func[:-1]}': russia_to_english(func[:-1])}
-                for func in re.findall(pattern=func_pattern, string=new_code)]
+    # matches += [{f'{func[:-1]}': russia_to_english(func[:-1])}
+    #             for func in re.findall(pattern=func_pattern, string=new_code)]
+    for func in re.findall(pattern=func_pattern, string=new_code):
+        if func[-1] != 'ь':
+            matches.append({func[:-1]: russia_to_english(func[:-1])})
+            continue
+        matches.append({func[:-1]: russia_to_english(func[:-1])})
 
     # formatting variables
     for match in matches:
