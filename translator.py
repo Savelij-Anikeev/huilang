@@ -121,8 +121,8 @@ def handle_code(old_code: list) -> (bool, str):
     #             for func in re.findall(pattern=func_pattern, string=new_code)]
     for func in re.findall(pattern=func_pattern, string=new_code):
         # if there are myagkiy znaki
-        func = func.replace('\'', 'b')
-        matches.append({func[:-1]: russia_to_english(func[:-1])})
+        translated_func = russia_to_english(func[:-1]).replace('\'', 'b')
+        matches.append({func[:-1]: translated_func})
 
     # formatting variables
     for match in matches:
