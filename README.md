@@ -16,3 +16,8 @@ Examples
     # these are the same
     python3 translator.py build_py *path to file* -c -r
     python3 translator.py build_py *path to file* -r -c
+
+Language support for ide's
+VS Code:
+
+    Extensions -> Huilang by mrskkbs -> install
